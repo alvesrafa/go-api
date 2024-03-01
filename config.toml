@@ -1,0 +1,9 @@
+[api]
+port = "9000"
+
+
+[database]
+host = "localhost"
+user = "go_user"
+pass = "go_pass"
+name = "go_api_todo"
