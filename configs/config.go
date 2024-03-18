@@ -25,6 +25,7 @@ func init() {
 	viper.SetDefault("api.port", "9000")
 	viper.SetDefault("database.host", "localhost")
 	viper.SetDefault("database.port", "5432")
+	viper.SetDefault("database.database", "go_api_todo")
 }
 
 func Load() error {
@@ -45,10 +46,11 @@ func Load() error {
 		Port: viper.GetString("api.port"),
 	}
 	cfg.DB = DBConfig{
-		Host: viper.GetString("database.host"),
-		Port: viper.GetString("database.port"),
-		User: viper.GetString("database.user"),
-		Pass: viper.GetString("database.pass"),
+		Host:     viper.GetString("database.host"),
+		Port:     viper.GetString("database.port"),
+		User:     viper.GetString("database.user"),
+		Pass:     viper.GetString("database.pass"),
+		Database: viper.GetString("database.database"),
 	}
 
 	return nil

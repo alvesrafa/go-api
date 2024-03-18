@@ -1,6 +1,8 @@
 package models
 
-import "alvesrafa.dev/study/database"
+import (
+	"alvesrafa.dev/study/database"
+)
 
 func Update(id int64, todo Todo) (int64, error) {
 
@@ -12,7 +14,7 @@ func Update(id int64, todo Todo) (int64, error) {
 
 	defer conn.Close()
 
-	sqlStatment := `UPDATE todos SET title=$2, description=$3, done=$4 WHERE id=$4`
+	sqlStatment := `UPDATE todos SET title=$2, description=$3, done=$4 WHERE id=$1`
 
 	res, err := conn.Exec(sqlStatment, id, todo.Title, todo.Description, todo.Done)
 

@@ -36,10 +36,12 @@ se conectar com o banco
 
 
 criar tabela
-create table todos (id serial primary key, name varchar, description text, done bool);
+create table todos (id serial primary key, title varchar, description text, done bool default false);
 
 \dt
 para checar
 
 
 grant all privileges on all tables in schema public to go_user;
+
+grant all privileges on all sequences in schema public to go_user;

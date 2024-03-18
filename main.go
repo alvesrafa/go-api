@@ -28,6 +28,6 @@ func main() {
 	err = http.ListenAndServe(fmt.Sprintf(":%s", configs.GetServerPort()), r)
 
 	if err != nil {
-		log.Printf("Running on port: %d", configs.GetServerPort())
+		log.Printf("Running on port: %s", configs.GetServerPort())
 	}
 }
